@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/hibernate-json
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+    tomcat:
+      validation-query: SELECT 1
+      validation-query-timeout: 200
+      test-on-borrow: true
+      test-while-idle: true
+      max-wait: 900
+      max-active: 30
+      max-idle: 20
+      log-validation-errors: true
+      login-timeout: 500
+      remove-abandoned: true
+      abandon-when-percentage-full: 100
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy

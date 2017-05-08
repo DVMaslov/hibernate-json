@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driverClassName: ru.codeseeker.util.JsonH2Driver
+    url: jdbc:h2:mem:test;MODE=PostgreSQL;DB_CLOSE_ON_EXIT=FALSE;JAVA_OBJECT_SERIALIZER='ru.codeseeker.util.JsonH2Serializer';
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
